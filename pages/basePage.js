@@ -1,8 +1,7 @@
 let webdriver = require('selenium-webdriver')
 const assert = require('assert')
 let driver = new webdriver.Builder().forBrowser('chrome').build()
-driver.manage().setTimeouts({implicit: (5000)})
-driver.manage().window().maximize()
+// driver.manage().window().maximize()
 
 class BasePage {
     constructor() {

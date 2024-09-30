@@ -10,7 +10,10 @@ const spesific_url = {
     komparasi_properti : `${base_url}tools/komparasi`,
     konsultasi : `${base_url}tools/konsultasi`,
     blog : `${base_url}blog`,
-    promo: `${base_url}promo`
+    promo : `${base_url}promo`,
+    developer : `${base_url}developer?pg=1`,
+    agen_properti : `${base_url}agen-properti/agensi/list`,
+    ajukan_kpr : `${base_url}ajukan_kpr`
 }
 
 module.exports = {
