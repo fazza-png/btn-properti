@@ -1,6 +1,6 @@
-let webdriver = require('selenium-webdriver')
+const {until, Builder} = require('selenium-webdriver')
 const assert = require('assert')
-let driver = new webdriver.Builder().forBrowser('chrome').build()
+let driver = new Builder().forBrowser('chrome').build()
 // driver.manage().window().maximize()
 
 class BasePage {
@@ -37,7 +37,7 @@ class BasePage {
     }
 
     async waitElement(locator) {
-        await driver.wait(webdriver.until.elementLocated(locator), 3000)
+        await driver.wait(until.elementLocated(locator), 5000)
     }
     
     async refreshTheBrowser() {
