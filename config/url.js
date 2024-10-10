@@ -13,7 +13,9 @@ const spesific_url = {
     promo : `${base_url}promo`,
     developer : `${base_url}developer?pg=1`,
     agen_properti : `${base_url}agen-properti/agensi/list`,
-    ajukan_kpr : `${base_url}ajukan_kpr`
+    ajukan_kpr : `${base_url}ajukan_kpr`,
+    list_properti_buy : `${base_url}property?budget=200000000&tipeProperti=1&tab=perumahan&lokasi=Jakarta`,
+    list_properti_rent : `${base_url}rent?lokasi=Jakarta&tipeProperti=kamar`
 }
 
 module.exports = {
