@@ -8,16 +8,15 @@ describe('Check home page', function () {
     
     const testHomePage = new HomePage()
 
-    // beforeEach('Refresh the browser', async () => {    
-    // })
+    beforeEach( async () => {
+        await testHomePage.navigateToBtnPropertiWeb()    
+    })
 
     after('Quit the browser', async () => {
         await testHomePage.quitTheBrowser()
     })
 
     it('TC001 access BTN Properti website', async () => {
-        await testHomePage.navigateToBtnPropertiWeb()
-        
         const actualTitle = await driver.getTitle()
         const expectedTitle = 'BTN Properti: Kemudahan Miliki Rumah Impian Dimulai Dari Sini'
         await testHomePage.verifyThat(actualTitle, expectedTitle)
@@ -102,6 +101,22 @@ describe('Check home page', function () {
         
         const actualUrl = await driver.getCurrentUrl()
         const expectedUrl = url.spesific_url.ajukan_kpr
+        await testHomePage.verifyThat(actualUrl, expectedUrl)
+    })
+
+    it('TC010 search to buy property', async () => {
+        await testHomePage.searchPropertiBeli()
+
+        const actualUrl = await driver.getCurrentUrl()
+        const expectedUrl = url.spesific_url.list_properti_buy
+        await testHomePage.verifyThat(actualUrl, expectedUrl)
+    })
+
+    it('TC010 search to rent property', async () => {
+        await testHomePage.searchPropertiRent()
+
+        const actualUrl = await driver.getCurrentUrl()
+        const expectedUrl = url.spesific_url.list_properti_rent
         await testHomePage.verifyThat(actualUrl, expectedUrl)
     })
 })
