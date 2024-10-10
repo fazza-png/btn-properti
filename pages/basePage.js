@@ -8,15 +8,6 @@ class BasePage {
         global.driver = driver
     }
 
-    async navigateTo(buttonLocator, url) {
-        if(buttonLocator) {
-            await driver.findElement(buttonLocator).click()
-        }
-        if(url) {
-            await driver.get(url)
-        }
-    }
-
     async quitTheBrowser() {
         await driver.quit()
     }
@@ -51,6 +42,14 @@ class BasePage {
     async backToPreviousPage() {
         await driver.navigate().back()
     }
+
+    async waitForValue(element, timeout) {
+        await driver.wait(async () => {
+            const value = await element.getAttribute('value');
+            return value.length > 0;
+        }, timeout);
+    }
+    
 }
 
 module.exports = BasePage
