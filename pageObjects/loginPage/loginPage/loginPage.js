@@ -1,6 +1,6 @@
-const BasePage = require('./basePage.js')
+const BasePage = require('../../basePage/basePage/basePage.js')
 const {By, until} = require('selenium-webdriver')
-const UserFactory = require('../factories/userFactory.js')
+const UserFactory = require('../../../factories/userFactory.js')
 const user = new UserFactory()
 const basePage = new BasePage()
 

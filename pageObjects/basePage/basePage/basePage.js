@@ -27,8 +27,8 @@ class BasePage {
         await driver.findElement(locator).getText()
     }
 
-    async waitElement(locator) {
-        await driver.wait(until.elementLocated(locator), 5000)
+    async waitElement(locator, timeout) {
+        await driver.wait(until.elementLocated(locator), timeout)
     }
     
     async refreshTheBrowser() {
