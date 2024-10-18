@@ -1,6 +1,6 @@
 const url = require('../../config/url.js')
 const HomePage = require('../../pageObjects/homePage/homePage/homePage.js')
-const {By, until} = require('selenium-webdriver')
+
 
 
 describe('Check home page', function () {
@@ -103,5 +103,9 @@ describe('Check home page', function () {
         const actualUrl = await driver.getCurrentUrl()
         const expectedUrl = url.spesific_url.list_properti_rent
         await homeTest.verifyThat(actualUrl, expectedUrl)
+    })
+
+    it('', async () => {
+
     })
 })

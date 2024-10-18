@@ -29,6 +29,7 @@ const mocha = new Mocha({
 })
 
 mocha.addFile('./test/homeTest/homeTest.js')
+// mocha.addFile('./test/loginTest/loginTest.js')
 
 mocha.run(function (failures) {
   if (failures) {

@@ -1,6 +1,12 @@
-const {until, Builder} = require('selenium-webdriver')
 const assert = require('assert')
-let driver = new Builder().forBrowser('chrome').build()
+const Chrome = require('selenium-webdriver/chrome')
+const {until, Builder, Browser} = require('selenium-webdriver')
+const options = new Chrome.Options()
+let driver = new Builder()
+    .forBrowser(Browser.CHROME)
+    .setChromeOptions(options.setPageLoadStrategy('normal'))
+    .build()
+
 // driver.manage().window().maximize()
 
 class BasePage {
@@ -10,6 +16,10 @@ class BasePage {
 
     async quitTheBrowser() {
         await driver.quit()
+    }
+
+    async goToWebUrl(url) {
+        await driver.get(url)
     }
 
     async scroll(elementLocator) {
@@ -23,12 +33,12 @@ class BasePage {
         assert.strictEqual(actualResult, expectedResult)
     }
 
-    async getText(locator) {
-        await driver.findElement(locator).getText()
-    }
-
     async waitElement(locator, timeout) {
         await driver.wait(until.elementLocated(locator), timeout)
+    }
+
+    async waitUrl(url, timeout) {
+        await driver.wait(until.urlIs(url), timeout)
     }
     
     async refreshTheBrowser() {

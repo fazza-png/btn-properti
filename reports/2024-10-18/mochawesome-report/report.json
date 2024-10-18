@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-18T03:25:33.746Z",
+    "end": "2024-10-18T03:27:18.326Z",
+    "duration": 104580,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cc406dbc-c5ec-4cee-8466-7b3b389d18c7",
+      "title": "",
+      "fullFile": "D:\\Kerjaan\\btn\\automation_test\\btn_properti\\test\\homeTest\\homeTest.js",
+      "file": "\\test\\homeTest\\homeTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e07d72b9-a223-4bec-a59a-db84669310f1",
+          "title": "Check home page",
+          "fullFile": "D:\\Kerjaan\\btn\\automation_test\\btn_properti\\test\\homeTest\\homeTest.js",
+          "file": "\\test\\homeTest\\homeTest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Check home page\"",
+              "fullTitle": "Check home page \"before each\" hook in \"Check home page\"",
+              "timedOut": false,
+              "duration": 7879,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await homeTest.navigateToBtnPropertiWeb()",
+              "err": {},
+              "uuid": "1f6351db-41f8-474f-8ced-94d1006f9fdc",
+              "parentUUID": "e07d72b9-a223-4bec-a59a-db84669310f1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: Quit the browser in \"Check home page\"",
+              "fullTitle": "Check home page \"after all\" hook: Quit the browser in \"Check home page\"",
+              "timedOut": false,
+              "duration": 1184,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await homeTest.quitTheBrowser()",
+              "err": {},
+              "uuid": "59dbb02a-9065-48a0-b490-c5ecae86dd85",
+              "parentUUID": "e07d72b9-a223-4bec-a59a-db84669310f1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "TC001 access BTN Properti website",
+              "fullTitle": "Check home page TC001 access BTN Properti website",
+              "timedOut": false,
+              "duration": 428,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const actualTitle = await driver.getTitle()\nconst expectedTitle = 'BTN Properti: Kemudahan Miliki Rumah Impian Dimulai Dari Sini'\nawait homeTest.verifyThat(actualTitle, expectedTitle)\n\nawait homeTest.scrollDown()",
+              "err": {},
+              "uuid": "1c9fd355-7ccc-40f0-9f92-a9ebab42d0de",
+              "parentUUID": "e07d72b9-a223-4bec-a59a-db84669310f1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC002 navigate to Hitung Harga page",
+              "fullTitle": "Check home page TC002 navigate to Hitung Harga page",
+              "timedOut": false,
+              "duration": 1319,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await homeTest.navigateToHitungHarga()\n\nconst actualUrl = await driver.getCurrentUrl()\nconst expectedUrl = url.spesific_url.hitung_harga\nawait homeTest.verifyThat(actualUrl, expectedUrl)\nconsole.log(`Actual url is: ${actualUrl}`)\nconsole.log(`Expected url is: ${expectedUrl}`)",
+              "err": {},
+              "uuid": "3e9371ab-de31-4738-adde-0ed768094186",
+              "parentUUID": "e07d72b9-a223-4bec-a59a-db84669310f1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1c9fd355-7ccc-40f0-9f92-a9ebab42d0de",
+            "3e9371ab-de31-4738-adde-0ed768094186"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1747,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.7.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "D:\\Kerjaan\\btn\\automation_test\\btn_properti\\reports\\2024-10-18\\mochawesome-report",
+        "reportFilename": "report",
+        "overwrite": true,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
